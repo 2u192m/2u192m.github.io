@@ -1,0 +1,107 @@
+:root{
+  --bg:#07132a; /* very dark blue */
+  --panel:#0b2340; /* darker blue panel */
+  --accent:#1e90ff; /* bright accent */
+  --muted:#98b0c9;
+  --glass: rgba(255,255,255,0.03);
+  --radius:12px;
+  --text:#e6f0ff;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,Helvetica,Arial;color:var(--text);background:linear-gradient(180deg,var(--bg),#051425);-webkit-font-smoothing:antialiased}
+.app{
+  max-width:980px;margin:24px auto;padding:18px;display:flex;flex-direction:column;gap:14px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:16px;border:1px solid rgba(255,255,255,0.04);backdrop-filter: blur(6px);
+  box-shadow: 0 6px 30px rgba(2,10,20,0.6);
+}
+
+/* Header */
+.brand{display:flex;align-items:center;gap:12px}
+.logo{
+  width:76px;height:76px;border-radius:14px;background:transparent;
+  display:flex;align-items:center;justify-content:center;color:#021226;font-weight:700;font-size:18px;
+  box-shadow:none;border:0;
+}
+.logo img{
+  width:52px;
+  height:52px;
+  object-fit:contain;
+  display:block;
+  border-radius:12px;
+  box-shadow:none;border:0;
+}
+.title{font-size:18px;font-weight:600;letter-spacing:0.2px}
+
+/* Tabs */
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tab{
+  background:var(--glass);border:1px solid rgba(255,255,255,0.03);color:var(--muted);padding:10px 12px;border-radius:10px;cursor:pointer;font-weight:600;
+  transition:all 180ms ease;min-width:88px;text-align:center;
+}
+.tab:hover{transform:translateY(-2px)}
+.tab.active{background:linear-gradient(90deg, rgba(30,144,255,0.12), rgba(0,176,255,0.06));color:var(--text);box-shadow:0 6px 18px rgba(0,0,0,0.35);border-color:rgba(30,144,255,0.18)}
+
+/* Pages area */
+.pages{display:grid;grid-template-columns:1fr;gap:12px;padding:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+.page{display:none;padding:16px}
+.page.active{display:block}
+.page h2{margin:0 0 10px 0;color:var(--accent)}
+
+/* Podcast list */
+.podcast-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.podcast-list li{padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02)}
+.podcast-item.clickable{cursor:pointer;transition:transform 120ms ease}
+.podcast-item.clickable:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,0.25)}
+
+/* small logo next to podcast title */
+.podcast-logo{
+  width:36px;height:36px;object-fit:contain;border-radius:8px;vertical-align:middle;margin-right:10px;
+}
+
+ /* popup menu for Bachablox */
+.popup{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.45);z-index:60}
+.popup[aria-hidden="false"]{display:flex}
+.popup-inner{position:relative;width:min(360px,92%);background:var(--panel);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);display:flex;flex-direction:column;gap:12px;align-items:center}
+.popup-inner img{width:160px;height:160px;object-fit:contain;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:rgba(255,255,255,0.01)}
+.popup-buttons{display:flex;gap:12px;width:100%;justify-content:space-between}
+.popup-btn{flex:1;padding:10px 12px;border-radius:10px;border:0;color:#fff;font-weight:700;cursor:pointer}
+.popup-btn.yt{background:#FF3B30} /* youtube red */
+.popup-btn.sp{background:#1DB954} /* spotify green */
+.popup-close{position:absolute;top:8px;right:8px;background:transparent;border:0;color:var(--muted);font-size:18px;padding:6px;cursor:pointer}
+
+/* Contact form */
+/* contact actions (buttons replacing form) */
+.contact-actions{display:flex;flex-direction:column;gap:10px;max-width:520px}
+.action-btn{
+  padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);
+  background:rgba(255,255,255,0.02);color:var(--text);font-weight:700;text-align:left;cursor:pointer;
+  transition:transform 150ms ease, background 150ms ease;
+}
+.action-btn:hover{transform:translateY(-3px);background:linear-gradient(90deg, rgba(30,144,255,0.06), rgba(0,176,255,0.02))}
+.action-btn.muted{background:transparent;border:1px solid rgba(255,255,255,0.03);color:var(--muted)}
+.message-box{
+  margin-top:12px;padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);
+  border:1px solid rgba(255,255,255,0.02);color:var(--muted);min-height:44px;display:none;
+}
+.message-box.visible{display:block;color:var(--text);border-color:rgba(30,144,255,0.12);background:linear-gradient(90deg, rgba(30,144,255,0.03), rgba(0,176,255,0.01))}
+button{cursor:pointer}
+
+/* Footer */
+.footer{text-align:center;color:var(--muted);font-size:13px;padding:6px 0}
+
+/* Responsive: ensure it fits one screen height on small devices by limiting app height */
+@media (max-height:700px){
+  .app{margin:12px;gap:10px;padding:12px}
+  .pages{padding:8px}
+  .brand .title{font-size:16px}
+}
+
+/* Small screens */
+@media (max-width:520px){
+  .app{margin:8px}
+  .brand{gap:10px}
+  .logo{width:56px;height:56px}
+  .tab{min-width:0;padding:10px 8px;font-size:14px}
+}
