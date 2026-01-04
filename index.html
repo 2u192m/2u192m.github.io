@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <title>The 2u192m Team</title>
+</head>
+<body>
+  <div class="app">
+    <header class="brand">
+      <div class="logo">
+        <img src="https://2u192m.github.io/2u192m.png" alt="2u192m logo" />
+      </div>
+      <div class="title">The 2u192m Team</div>
+    </header>
+
+    <nav class="tabs" role="tablist" aria-label="Primary">
+      <button class="tab active" data-target="about" role="tab" aria-selected="true">About Us</button>
+      <button class="tab" data-target="podcasts" role="tab" aria-selected="false">Our Podcasts</button>
+      <button class="tab" data-target="contact" role="tab" aria-selected="false">Contact</button>
+    </nav>
+
+    <main class="pages">
+      <section id="about" class="page active" role="tabpanel">
+        <h2>About Us</h2>
+        <p>We are The 2u192m Team — We repost YouTube videos to spotify as a podcast so everyone can watch these vids on spotify if they like If you read this please subscribe to all the creators on YouTube. We dont sign up for the partner program because its not our content so WE DONT MAKE MONEY with it!</p>
+      </section>
+
+      <section id="podcasts" class="page" role="tabpanel" aria-hidden="true">
+        <h2>Our Podcasts</h2>
+        <ul class="podcast-list">
+          <li data-id="2u192m" class="podcast-item clickable">
+            <strong><img class="podcast-logo" src="https://2u192m.github.io/2u192m.png" alt="2u192m logo" />2u192m</strong>
+            <p>Our main Podcast with all sorts of videos</p>
+          </li>
+          <li data-id="bachablox" class="podcast-item clickable">
+            <strong><img class="podcast-logo" src="https://raw.githubusercontent.com/2u192m/2u192m.github.io/refs/heads/main/images/bachablox.png" alt="Bachablox logo" />Bachablox</strong>
+            <p>The bachablox podcast with a lot of his cool roblox the forge videos</p>
+          </li>
+          <li data-id="minecraft" class="podcast-item clickable">
+            <strong><img class="podcast-logo" src="https://raw.githubusercontent.com/2u192m/2u192m.github.io/refs/heads/main/images/2u192m%20-%20Minecraft.png" alt="2u192m - Minecraft logo" />2u192m - Minecraft</strong>
+            <p>Our Minecraft Podcast with nice Minecraft videos</p>
+          </li>
+          <li data-id="roblox" class="podcast-item clickable">
+            <strong><img class="podcast-logo" src="https://raw.githubusercontent.com/2u192m/2u192m.github.io/refs/heads/main/2u192m.png" alt="Roblox 2u192m logo" />Roblox 2u192m</strong>
+            <p>Cool roblox videos we think you like!</p>
+          </li>
+          <li data-id="shorts" class="podcast-item clickable">
+            <strong><img class="podcast-logo" src="https://raw.githubusercontent.com/2u192m/2u192m.github.io/refs/heads/main/2u192m.png" alt="2u192m SHORTS logo" />2u192m SHORTS</strong>
+            <p>Sometimes we upload some shorts here</p>
+          </li>
+          <li data-id="idjots" class="podcast-item clickable">
+            <strong><img class="podcast-logo" src="https://raw.githubusercontent.com/2u192m/2u192m.github.io/refs/heads/main/images/idjotsroblox.png" alt="Idjots Roblox logo" />Idjots Roblox</strong>
+            <p>The Roblox Grow a Garden videos of Bacha and Noodle together</p>
+          </li>
+        </ul>
+
+        <!-- popup menu for Bachablox -->
+        <div id="popupMenu" class="popup" role="dialog" aria-hidden="true">
+          <div class="popup-inner" role="document">
+            <img id="popupImage" src="https://raw.githubusercontent.com/2u192m/2u192m.github.io/refs/heads/main/images/bachablox.png" alt="Bachablox" />
+            <div class="popup-buttons">
+              <button id="bachYoutube" class="popup-btn yt">YouTube</button>
+              <button id="bachSpotify" class="popup-btn sp">Spotify</button>
+            </div>
+            <button id="popupClose" class="popup-close" aria-label="Close">✕</button>
+          </div>
+        </div>
+
+        <!-- popup menu for Idjots Roblox -->
+        <div id="popupMenuIdjots" class="popup" role="dialog" aria-hidden="true">
+          <div class="popup-inner" role="document">
+            <img id="popupImageIdjots" src="https://raw.githubusercontent.com/2u192m/2u192m.github.io/refs/heads/main/images/idjotsroblox.png" alt="Idjots Roblox" />
+            <div class="popup-buttons">
+              <button id="idjotsYoutube" class="popup-btn yt">YouTube</button>
+              <button id="idjotsSpotify" class="popup-btn sp">Spotify</button>
+            </div>
+            <button id="popupCloseIdjots" class="popup-close" aria-label="Close">✕</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="page" role="tabpanel" aria-hidden="true">
+        <h2>Contact</h2>
+
+        <div class="contact-actions">
+          <button class="action-btn" id="removeBtn">Take my content off Spotify</button>
+          <button class="action-btn" id="addBtn">Add this creator/video to your podcasts</button>
+          <button class="action-btn muted" id="otherBtn">Other things</button>
+        </div>
+
+        <div id="contactMessage" class="message-box" aria-live="polite"></div>
+
+        <p class="note"></p>
+      </section>
+    </main>
+
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
